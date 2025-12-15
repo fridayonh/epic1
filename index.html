@@ -87,6 +87,14 @@
     .retry-btn {
       @apply bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-all mt-4;
     }
+    /* 公众号引流区样式 */
+    .wechat-qrcode {
+      transition: all 0.3s ease;
+    }
+    .wechat-qrcode:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 <body class="font-inter bg-gray-50 text-dark min-h-screen flex flex-col">
@@ -166,6 +174,49 @@
       </p>
     </div>
   </main>
+
+  <!-- 公众号引流区 -->
+  <section class="bg-gradient-to-r from-primary to-primary/80 text-white py-8 my-6">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-8">
+      <!-- 左侧文字说明 -->
+      <div class="text-center md:text-left max-w-md">
+        <div class="flex items-center justify-center md:justify-start gap-3 mb-3">
+          <i class="fa fa-weixin text-3xl"></i>
+          <h3 class="text-2xl font-bold">关注「Friday 工具箱」</h3>
+        </div>
+        <p class="text-white/90 mb-4 text-lg">每天一个实用小技巧</p>
+        <ul class="text-left space-y-2 text-white/80">
+          <li class="flex items-start gap-2">
+            <i class="fa fa-check-circle mt-1"></i>
+            <span>每日Epic喜加一提醒</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa fa-check-circle mt-1"></i>
+            <span>实用工具推荐与教程</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa fa-check-circle mt-1"></i>
+            <span>更多免费资源分享</span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- 右侧二维码（请替换下面的base64内容） -->
+      <div class="wechat-qrcode bg-white p-3 rounded-lg shadow-lg">
+        <!-- 👇👇 替换说明：
+        1. 请将下面的 "DATA:image/png;base64,你的二维码base64编码" 替换为实际的二维码base64
+        2. 转换方法：
+           - 在线转换工具：https://tool.chinaz.com/tools/imgtobase/
+           - 步骤：上传公众号二维码图片 → 选择base64编码 → 复制生成的完整base64字符串
+           - 替换下面 src 引号内的所有内容（包括 "data:image/png;base64," 前缀）
+        -->
+        <img src="data:image/jpeg;base64,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" 
+             alt="Friday工具箱公众号二维码" 
+             class="w-48 h-48 object-contain"
+             onerror="this.src='https://via.placeholder.com/192x192?text=二维码加载失败'">
+      </div>
+    </div>
+  </section>
 
   <!-- 页脚 -->
   <footer class="bg-dark text-white py-6">
